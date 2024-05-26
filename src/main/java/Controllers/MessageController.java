@@ -1,4 +1,4 @@
-package org.example.sudokugame;
+package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
