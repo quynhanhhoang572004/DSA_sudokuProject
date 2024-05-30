@@ -4,6 +4,7 @@ package Controllers;
 
 import Model.SudokuModel;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -17,7 +18,10 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+import static com.sun.javafx.scene.control.skin.Utils.getResource;
+
 public class SudokuController implements Initializable {
+    private String FileName = "/Data/sudokuGame.txt";
     public TextField tf_3_7;
     public TextField tf_4_8;
     public TextField tf_4_7;
@@ -106,8 +110,10 @@ public class SudokuController implements Initializable {
     public static String messageResult;
     private int counter;
     private SudokuModel model;
+    private SoundManager soundManager;
     public SudokuController(){
         this.model = new SudokuModel();
+        this.soundManager = new SoundManager();
     }
 
     @Override
@@ -118,6 +124,7 @@ public class SudokuController implements Initializable {
         setValue();
 
     }
+
 
 
 
@@ -203,7 +210,11 @@ public class SudokuController implements Initializable {
         i[8][6] =  model.emptyChecker(tf_8_6.getText());
         i[8][7] =  model.emptyChecker(tf_8_7.getText());
         i[8][8] =  model.emptyChecker(tf_8_8.getText());
+
+       
     }
+  
+
 
 
     private void setValue(){
@@ -399,6 +410,7 @@ public class SudokuController implements Initializable {
                 ans[a][b] = i[a][b];
 
                 if(levelController.level.equals("Easy")) {
+                    soundManager.playSound("sound 1");
                     if(random1.nextInt(3)<1) {
                         i[a][b] = 0; counter++;
                         if(counter>54){
@@ -528,7 +540,9 @@ public class SudokuController implements Initializable {
         tf_8_6.setText(model.checkZero(i[8][6]));
         tf_8_7.setText(model.checkZero(i[8][7]));
         tf_8_8.setText(model.checkZero(i[8][8]));
+
     }
+
 
     public void newGame(ActionEvent actionEvent) throws IOException {
         Parent parent =
@@ -559,16 +573,22 @@ public class SudokuController implements Initializable {
                 if(i[a][b]==ans[a][b]){
                     joy++;
                 }
+
             }
         }
 
-        if(joy==81){
+        if (joy == 81) {
             messageResult = "Congratulations!!!! You Win";
             message(actionEvent);
 
-        }else{
+        } else {
             messageResult = "You Lost. Try again....";
             message(actionEvent);
         }
+    }
+
+    @FXML
+    void loadGame(ActionEvent event) {
+
     }
 }
