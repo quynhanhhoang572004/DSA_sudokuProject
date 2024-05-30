@@ -10,9 +10,9 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("level.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/Controllers/MainPage .fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 604, 591);
-        stage.setTitle("Sudoku-Life");
+        stage.setTitle("Soduku Girls edition");
         stage.setResizable(true);
         stage.setScene(scene);
         stage.show();

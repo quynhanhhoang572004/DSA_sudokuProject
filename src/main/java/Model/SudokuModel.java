@@ -58,13 +58,6 @@ public class SudokuModel {
         }
         return sm;
     }
-
-
-
-
-
-
-
     public String checkZero(int n){
         return n==0 ? " " : String.valueOf(n);
     }
