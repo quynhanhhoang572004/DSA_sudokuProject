@@ -2,6 +2,7 @@ package Controllers;
 
 
 
+import Model.SoundManager;
 import Model.SudokuModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,8 +18,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
-
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class SudokuController implements Initializable {
     private String FileName = "/Data/sudokuGame.txt";
@@ -603,4 +602,9 @@ public class SudokuController implements Initializable {
         soundManager.playSound("sound1");
 
     }
+//    public void closeSounds() {
+//        if (soundManager != null) {
+//            soundManager.closeAllClips();
+//        }
+//    }
 }

@@ -27,7 +27,7 @@
                <graphic>
                   <ImageView fx:id="btn_offVolume" fitHeight="33.0" fitWidth="24.0">
                      <image>
-                        <Image url="@Images/VolumeOff.png" />
+                        <Image url="@../Images/VolumeOff.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -36,7 +36,7 @@
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="41.0">
                      <image>
-                        <Image url="@Images/VolumeOn.png" />
+                        <Image url="@../Images/VolumeOn.png" />
                      </image>
                   </ImageView>
                </graphic>

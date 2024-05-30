@@ -35,7 +35,7 @@
                   </Button>
                   <ImageView fitHeight="323.0" fitWidth="380.0" layoutX="113.0">
                      <image>
-                        <Image url="@Images/NewGame.png" />
+                        <Image url="@../Images/NewGame.png" />
                      </image>
                   </ImageView>
                </children>
