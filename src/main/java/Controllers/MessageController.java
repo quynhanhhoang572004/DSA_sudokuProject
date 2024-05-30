@@ -23,7 +23,7 @@ public class MessageController implements Initializable {
 
     public void btn_try_again(ActionEvent actionEvent) throws IOException {
         Parent parent =
-                FXMLLoader.load(getClass().getResource("level.fxml"));
+                FXMLLoader.load(getClass().getResource("/static/level.fxml"));
         Scene scene = new Scene(parent);
         Stage stage =
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

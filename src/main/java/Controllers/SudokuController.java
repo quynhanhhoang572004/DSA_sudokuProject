@@ -556,7 +556,7 @@ public class SudokuController implements Initializable {
 
     private void message(ActionEvent actionEvent) throws IOException {
         Parent parent =
-                FXMLLoader.load(getClass().getResource("message.fxml"));
+                FXMLLoader.load(getClass().getResource("/static/message.fxml"));
         Scene scene = new Scene(parent);
         Stage stage =
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -579,10 +579,14 @@ public class SudokuController implements Initializable {
 
         if (joy == 81) {
             messageResult = "Congratulations!!!! You Win";
+            soundManager.stopSound("sound1");
+            soundManager.playnormalSound("win");
             message(actionEvent);
 
         } else {
             messageResult = "You Lost. Try again....";
+            soundManager.stopSound("sound1");
+            soundManager.playnormalSound("lose");
             message(actionEvent);
         }
     }

@@ -65,13 +65,13 @@ public class SoundManager {
             clip.stop();
         }
     }
-//    public void playnormalSound(String soundKey) {
-//        Clip clip = soundMap.get(soundKey);
-//        if (clip != null) {
-//            clip.setFramePosition(0); // Rewind to the beginning
-//            clip.start();
-//        }
-//    }
+    public void playnormalSound(String soundKey) {
+        Clip clip = soundMap.get(soundKey);
+        if (clip != null) {
+            clip.setFramePosition(0); // Rewind to the beginning
+            clip.start();
+        }
+    }
 
     public void closeAllClips() {
         for (Clip clip : soundMap.values()) {
