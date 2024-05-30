@@ -23,7 +23,7 @@ public class SoundManager {
             AudioInputStream audioInputStream1 = AudioSystem.getAudioInputStream(soundFile);
             Clip clip1 = AudioSystem.getClip();
             clip1.open(audioInputStream1);
-            clip1.start();
+
             soundMap.put("sound1", clip1);
 
 //            File soundFile2 = new File("/Sound/pianos-by-jtwayne-7-174717.mp3");
@@ -42,6 +42,7 @@ public class SoundManager {
         Clip clip = soundMap.get(soundKey);
         if (clip != null) {
             clip.setFramePosition(0); // Rewind to the beginning
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             clip.start();
         }
     }

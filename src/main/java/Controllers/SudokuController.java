@@ -118,9 +118,11 @@ public class SudokuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         model.initializeGrids();
         model.setCounter(0);
         model.setMessageResult(null);
+        soundManager.playSound("sound1");
         setValue();
 
     }
@@ -410,7 +412,6 @@ public class SudokuController implements Initializable {
                 ans[a][b] = i[a][b];
 
                 if(levelController.level.equals("Easy")) {
-                    soundManager.playSound("sound 1");
                     if(random1.nextInt(3)<1) {
                         i[a][b] = 0; counter++;
                         if(counter>54){
@@ -589,6 +590,17 @@ public class SudokuController implements Initializable {
 
     @FXML
     void loadGame(ActionEvent event) {
+
+    }
+    @FXML
+    void btn_offVolume(ActionEvent event) {
+        soundManager.stopSound("sound1");
+
+    }
+
+    @FXML
+    void btn_onVolume(ActionEvent event) {
+        soundManager.playSound("sound1");
 
     }
 }
