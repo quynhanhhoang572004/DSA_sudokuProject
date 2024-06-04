@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="604.0" style="-fx-background-color: #220456;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sudokugame.levelController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="604.0" style="-fx-background-color: #A1C9F1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.levelController">
     <children>
         <VBox alignment="CENTER" prefHeight="548.0" prefWidth="420.0" VBox.vgrow="ALWAYS">
             <VBox.margin>
@@ -20,9 +20,9 @@
                     <children>
                         <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#btn_easy" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Easy">
+                                <Button mnemonicParsing="false" onAction="#btn_easy" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Easy">
                                     <font>
-                                        <Font size="19.0" />
+                                        <Font name="System Bold Italic" size="19.0" />
                                     </font>
                                     <HBox.margin>
                                         <Insets top="9.0" />
@@ -32,9 +32,9 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#btn_medium" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Medium">
+                                <Button mnemonicParsing="false" onAction="#btn_medium" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Medium">
                                     <font>
-                                        <Font size="19.0" />
+                                        <Font name="System Bold Italic" size="19.0" />
                                     </font>
                                     <HBox.margin>
                                         <Insets top="9.0" />
@@ -44,9 +44,9 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#btn_hard" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Hard">
+                                <Button mnemonicParsing="false" onAction="#btn_hard" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Hard">
                                     <font>
-                                        <Font size="19.0" />
+                                        <Font name="System Bold Italic" size="19.0" />
                                     </font>
                                     <HBox.margin>
                                         <Insets top="9.0" />
@@ -56,9 +56,9 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#btn_expert" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Expert">
+                                <Button mnemonicParsing="false" onAction="#btn_expert" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Expert">
                                     <font>
-                                        <Font size="19.0" />
+                                        <Font name="System Bold Italic" size="19.0" />
                                     </font>
                                     <HBox.margin>
                                         <Insets top="9.0" />
@@ -68,9 +68,9 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#btn_evil" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Evil">
+                                <Button mnemonicParsing="false" onAction="#btn_evil" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Evil">
                                     <font>
-                                        <Font size="19.0" />
+                                        <Font name="System Bold Italic" size="19.0" />
                                     </font>
                                     <HBox.margin>
                                         <Insets top="9.0" />

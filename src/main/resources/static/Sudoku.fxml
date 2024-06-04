@@ -2,7 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -10,14 +14,41 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="604.0" style="-fx-background-color: #220456;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sudokugame.SudokuController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="604.0" style="-fx-background-color: #A1C9F1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SudokuController">
     <children>
+      <AnchorPane prefHeight="0.0" prefWidth="604.0">
+         <children>
+            <Label layoutX="14.0" layoutY="4.0" prefWidth="192.0" style="-fx-text-fill: #f765a3;" text="SODUKU GAME (Girls edition)" textFill="WHITE">
+               <font>
+                  <Font name="Baloo Bhaina 2 Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_offVolume" layoutX="485.0" mnemonicParsing="false" onAction="#btn_offVolume" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="btn_offVolume" fitHeight="33.0" fitWidth="24.0">
+                     <image>
+                        <Image url="@../Images/VolumeOff.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_onVolume" layoutX="525.0" layoutY="2.0" mnemonicParsing="false" onAction="#btn_onVolume" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="41.0">
+                     <image>
+                        <Image url="@../Images/VolumeOn.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
         <VBox alignment="CENTER" prefHeight="548.0" prefWidth="420.0" VBox.vgrow="ALWAYS">
             <VBox.margin>
                 <Insets bottom="20.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
             <children>
-                <GridPane alignment="CENTER" style="-fx-background-color: #4B19A2;" VBox.vgrow="ALWAYS">
+                <GridPane alignment="CENTER" prefHeight="426.0" prefWidth="529.0" style="-fx-background-color: #EFB0C9;" VBox.vgrow="ALWAYS">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -937,19 +968,27 @@
             <children>
                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button layoutX="347.0" layoutY="10.0" mnemonicParsing="false" onAction="#newGame" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white;" text="New Game">
+                        <Button layoutX="347.0" layoutY="10.0" mnemonicParsing="false" onAction="#newGame" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white;" text="New Game">
                             <font>
-                                <Font size="15.0" />
+                                <Font name="System Bold" size="15.0" />
                             </font>
                         </Button>
-                        <Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn_result" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #4B19A2; -fx-text-fill: white;" text="Result">
+                        <Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#btn_result" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white;" text="Result">
                             <font>
-                                <Font size="15.0" />
+                                <Font name="System Bold" size="15.0" />
                             </font>
                             <HBox.margin>
                                 <Insets left="8.0" />
                             </HBox.margin>
                         </Button>
+                  <Button fx:id="saveGame" mnemonicParsing="false" onAction="#loadGame" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white;" text="Load Game">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                      <HBox.margin>
+                      <Insets left="8.0" />
+                      </HBox.margin>
+                  </Button>
                     </children>
                 </HBox>
             </children>
