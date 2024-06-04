@@ -42,9 +42,6 @@ public class SoundManager {
             soundMap.put("win", clip3);
 
 
-
-
-
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }

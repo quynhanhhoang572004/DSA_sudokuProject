@@ -546,7 +546,7 @@ public class SudokuController implements Initializable {
 
     public void newGame(ActionEvent actionEvent) throws IOException {
         Parent parent =
-                FXMLLoader.load(getClass().getResource("level.fxml"));
+                FXMLLoader.load(getClass().getResource("/static/level.fxml"));
         Scene scene = new Scene(parent);
         Stage stage =
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
