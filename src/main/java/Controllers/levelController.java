@@ -29,14 +29,24 @@ public class levelController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    private void getSource2(ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource("/static/6x6_soduku.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage =
+                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void btn_easy(ActionEvent actionEvent) throws IOException {
         level = "Easy";
-        getSource(actionEvent);
+        getSource2(actionEvent);
     }
 
     public void btn_medium(ActionEvent actionEvent) throws IOException {
         level = "Medium";
-        getSource(actionEvent);
+        getSource2(actionEvent);
     }
 
     public void btn_hard(ActionEvent actionEvent) throws IOException {
