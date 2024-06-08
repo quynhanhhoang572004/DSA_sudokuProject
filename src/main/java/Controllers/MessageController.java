@@ -19,6 +19,7 @@ public class MessageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lb_message.setText(SudokuController.messageResult);
+        lb_message.setText(Sudoku6x6Controller.messageResult);
     }
 
     public void btn_try_again(ActionEvent actionEvent) throws IOException {

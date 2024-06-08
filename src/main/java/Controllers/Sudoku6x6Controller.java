@@ -20,7 +20,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Sudoku6x6Controller implements Initializable {
-    private String FileName = "/Data/sudokuGame.txt";
+
 
     public TextField tf_3_1;
     public TextField tf_4_2;
@@ -208,14 +208,6 @@ public class Sudoku6x6Controller implements Initializable {
                 i[sd4][a] = sp;
             }
 
-//            sd3 = 6; sd4 = 7;
-//            for(int a=0; a<=8; a++){
-//                int sp = i[sd3][a];
-//                i[sd3][a] = i[sd4][a];
-//                i[sd4][a] = sp;
-//            }
-
-            // 2nd ssd
             sd3 = 1; sd4 = 2;
             for(int a=0; a<=5; a++){
                 int sp = i[a][sd3];
@@ -328,6 +320,7 @@ public class Sudoku6x6Controller implements Initializable {
     }
 
     public void btn_result(ActionEvent actionEvent) throws IOException {
+
         getUserInput();
 
         int joy = 0;
@@ -369,9 +362,5 @@ public class Sudoku6x6Controller implements Initializable {
         soundManager.playSound("sound1");
 
     }
-//    public void closeSounds() {
-//        if (soundManager != null) {
-//            soundManager.closeAllClips();
-//        }
-//    }
+
 }
