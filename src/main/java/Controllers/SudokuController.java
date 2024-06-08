@@ -387,23 +387,6 @@ public class SudokuController implements Initializable {
             for(int b=0; b<9; b++){
                 ans[a][b] = i[a][b];
 
-//                if(levelController.level.equals("Easy")) {
-//                    if(random1.nextInt(3)<1) {
-//                        i[a][b] = 0; counter++;
-//                        if(counter>54){
-//                            port1 = true;
-//                            break;
-//                        }
-//                    }
-//                }else if(levelController.level.equals("Medium")) {
-//                    if(random1.nextInt(3)<=1) {
-//                        i[a][b] = 0; counter++;
-//                        if(counter>54){
-//                            port1 = true;
-//                            break;
-//                        }
-//                    }
-//                }
              if(levelController.level.equals("Hard")) {
                     if(random1.nextInt(5)<=2) {
                         i[a][b] = 0; counter++;
@@ -490,7 +473,7 @@ public class SudokuController implements Initializable {
 
     private void message(ActionEvent actionEvent) throws IOException {
         Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/message.fxml"));
+                FXMLLoader.load(getClass().getResource("/static/GameOver.fxml"));
         Scene scene = new Scene(parent);
         Stage stage =
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -512,13 +495,12 @@ public class SudokuController implements Initializable {
         }
 
         if (joy == 81) {
-            messageResult = "Congratulations!!!! You Win";
             soundManager.stopSound("sound1");
             soundManager.playnormalSound("win");
             message(actionEvent);
 
         } else {
-            messageResult = "You Lost. Try again....";
+
             soundManager.stopSound("sound1");
             soundManager.playnormalSound("lose");
             message(actionEvent);
@@ -540,9 +522,5 @@ public class SudokuController implements Initializable {
         soundManager.playSound("sound1");
 
     }
-//    public void closeSounds() {
-//        if (soundManager != null) {
-//            soundManager.closeAllClips();
-//        }
-//    }
+
 }

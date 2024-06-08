@@ -24,6 +24,11 @@
                         <Font name="Baloo Bhaina 2 Bold" size="14.0" />
                      </font>
                   </Label>
+                  <Label layoutX="206.0" layoutY="14.0" prefWidth="192.0" style="-fx-text-fill: #f765a3;" text="SODUKU GAME (Girls edition)" textFill="WHITE">
+                     <font>
+                        <Font name="Baloo Bhaina 2 Bold" size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="399.0" prefWidth="604.0">
