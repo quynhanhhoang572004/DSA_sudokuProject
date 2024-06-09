@@ -19,12 +19,12 @@ public class SoundManager {
 
         try {
             ClassLoader classLoader = this.getClass().getClassLoader();
-            File soundFile = new File(classLoader.getResource("Sound/trap-pianos-200371.wav").getFile());
+            File soundFile = new File(classLoader.getResource("Sound/lofi-synth-pattern-29946.wav").getFile());
             AudioInputStream audioInputStream1 = AudioSystem.getAudioInputStream(soundFile);
             Clip clip1 = AudioSystem.getClip();
             clip1.open(audioInputStream1);
 
-            soundMap.put("sound1", clip1);
+            soundMap.put("easy", clip1);
 
 
             File soundFile2 = new File(classLoader.getResource("Sound/game-over-31-179699.wav").getFile());
@@ -40,6 +40,37 @@ public class SoundManager {
             clip3.open(audioInputStream3);
 
             soundMap.put("win", clip3);
+
+            File soundFile4 = new File(classLoader.getResource("Sound/trap-pianos-200371.wav").getFile());
+            AudioInputStream audioInputStream4 = AudioSystem.getAudioInputStream(soundFile4);
+            Clip clip4 = AudioSystem.getClip();
+            clip4.open(audioInputStream4);
+
+            soundMap.put("medium", clip4);
+
+            File soundFile5 = new File(classLoader.getResource("Sound/trap-pianos-200371.wav").getFile());
+            AudioInputStream audioInputStream5 = AudioSystem.getAudioInputStream(soundFile5);
+            Clip clip5 = AudioSystem.getClip();
+            clip5.open(audioInputStream5);
+
+            soundMap.put("hard", clip5);
+
+            File soundFile6 = new File(classLoader.getResource("Sound/waves-gentle-med-cu-lake-water-ttp-24-96-180618-23154.wav").getFile());
+            AudioInputStream audioInputStream6 = AudioSystem.getAudioInputStream(soundFile6);
+            Clip clip6 = AudioSystem.getClip();
+            clip6.open(audioInputStream6);
+
+            soundMap.put("expert", clip6);
+
+            File soundFile7 = new File(classLoader.getResource("Sound/waves-hitting-the-rocks-16680.wav").getFile());
+            AudioInputStream audioInputStream7 = AudioSystem.getAudioInputStream(soundFile7);
+            Clip clip7 = AudioSystem.getClip();
+            clip7.open(audioInputStream7);
+
+            soundMap.put("evil", clip7);
+
+
+
 
 
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {

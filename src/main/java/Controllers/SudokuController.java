@@ -121,7 +121,6 @@ public class SudokuController implements Initializable {
         model.initializeGrids();
         model.setCounter(0);
         model.setMessageResult(null);
-        soundManager.playSound("sound1");
         setValue();
 
     }
@@ -387,25 +386,9 @@ public class SudokuController implements Initializable {
             for(int b=0; b<9; b++){
                 ans[a][b] = i[a][b];
 
-//                if(levelController.level.equals("Easy")) {
-//                    if(random1.nextInt(3)<1) {
-//                        i[a][b] = 0; counter++;
-//                        if(counter>54){
-//                            port1 = true;
-//                            break;
-//                        }
-//                    }
-//                }else if(levelController.level.equals("Medium")) {
-//                    if(random1.nextInt(3)<=1) {
-//                        i[a][b] = 0; counter++;
-//                        if(counter>54){
-//                            port1 = true;
-//                            break;
-//                        }
-//                    }
-//                }
              if(levelController.level.equals("Hard")) {
                     if(random1.nextInt(5)<=2) {
+                        soundManager.playSound("hard");
                         i[a][b] = 0; counter++;
                         if(counter>54){
                             port1 = true;
@@ -413,6 +396,7 @@ public class SudokuController implements Initializable {
                         }
                     }
                 }else if(levelController.level.equals("Expert")) {
+                 soundManager.playSound("expert");
                     if(random1.nextInt(6)<=3) {
                         i[a][b] = 0; counter++;
                         if(counter>70){
@@ -421,6 +405,7 @@ public class SudokuController implements Initializable {
                         }
                     }
                 }else if(levelController.level.equals("Evil")) {
+                 soundManager.playSound("evil");
                     if(random1.nextInt(7)<=4) {
                         i[a][b] = 0; counter++;
                         if(counter>70){
@@ -479,6 +464,20 @@ public class SudokuController implements Initializable {
 
 
     public void newGame(ActionEvent actionEvent) throws IOException {
+        if(levelController.level.equals("Hard")) {
+            soundManager.stopSound("hard");
+            loadNewGame(actionEvent);
+        }
+        else if(levelController.level.equals("Expert")) {
+            soundManager.stopSound("expert");
+            loadNewGame(actionEvent);
+        }
+        else if(levelController.level.equals("Evil")) {
+            soundManager.stopSound("evil");
+            loadNewGame(actionEvent);
+        }
+    }
+    private void loadNewGame(ActionEvent actionEvent) throws IOException {
         Parent parent =
                 FXMLLoader.load(getClass().getResource("/static/level.fxml"));
         Scene scene = new Scene(parent);
@@ -486,16 +485,27 @@ public class SudokuController implements Initializable {
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+
     }
 
     private void message(ActionEvent actionEvent) throws IOException {
         Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/message.fxml"));
+                FXMLLoader.load(getClass().getResource("/static/GameOver.fxml"));
         Scene scene = new Scene(parent);
         Stage stage =
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+    private void message2(ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource("/static/WinGame.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage =
+                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     public void btn_result(ActionEvent actionEvent) throws IOException {
@@ -512,37 +522,57 @@ public class SudokuController implements Initializable {
         }
 
         if (joy == 81) {
-            messageResult = "Congratulations!!!! You Win";
-            soundManager.stopSound("sound1");
+        if(levelController.level.equals("Hard")) {
+            soundManager.stopSound("hard");
             soundManager.playnormalSound("win");
-            message(actionEvent);
+            message2(actionEvent);
+        }
+            else if(levelController.level.equals("Expert")) {
+                soundManager.stopSound("expert");
+                soundManager.playnormalSound("win");
+                message2(actionEvent);
+            }
+        else if(levelController.level.equals("Evil")) {
+            soundManager.stopSound("evil");
+            soundManager.playnormalSound("win");
+            message2(actionEvent);
+        }
+
 
         } else {
-            messageResult = "You Lost. Try again....";
-            soundManager.stopSound("sound1");
+            if(levelController.level.equals("Hard")){
+            soundManager.stopSound("hard");
             soundManager.playnormalSound("lose");
-            message(actionEvent);
+            message(actionEvent);}
+            else if(levelController.level.equals("Expert")){
+                soundManager.stopSound("expert");
+                soundManager.playnormalSound("lose");
+                message(actionEvent);}
+            else if(levelController.level.equals("Evil")){
+                soundManager.stopSound("ecil");
+                soundManager.playnormalSound("lose");
+                message(actionEvent);}
         }
-    }
+        }
 
-    @FXML
-    void loadGame(ActionEvent event) {
 
-    }
+
+
+
+
     @FXML
     void btn_offVolume(ActionEvent event) {
-        soundManager.stopSound("sound1");
+        if(levelController.level.equals("Hard")) {
+            soundManager.stopSound("hard");
+        }
 
     }
 
     @FXML
     void btn_onVolume(ActionEvent event) {
-        soundManager.playSound("sound1");
+        if(levelController.level.equals("Hard")) {
+        soundManager.playSound("hard");}
 
     }
-//    public void closeSounds() {
-//        if (soundManager != null) {
-//            soundManager.closeAllClips();
-//        }
-//    }
+
 }

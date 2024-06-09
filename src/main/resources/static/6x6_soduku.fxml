@@ -481,14 +481,6 @@
                                 <Insets left="8.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="saveGame" mnemonicParsing="false" onAction="#loadGame" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white;" text="Load Game">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="8.0" />
-                            </HBox.margin>
-                        </Button>
                     </children>
                 </HBox>
             </children>

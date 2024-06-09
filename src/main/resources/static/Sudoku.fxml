@@ -25,7 +25,7 @@
             </Label>
             <Button fx:id="btn_offVolume" layoutX="485.0" mnemonicParsing="false" onAction="#btn_offVolume" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fx:id="btn_offVolume" fitHeight="33.0" fitWidth="24.0">
+                  <ImageView fitHeight="33.0" fitWidth="24.0">
                      <image>
                         <Image url="@../Images/VolumeOff.png" />
                      </image>
@@ -981,14 +981,6 @@
                                 <Insets left="8.0" />
                             </HBox.margin>
                         </Button>
-                  <Button fx:id="saveGame" mnemonicParsing="false" onAction="#loadGame" prefHeight="22.0" prefWidth="140.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white;" text="Load Game">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                      <HBox.margin>
-                      <Insets left="8.0" />
-                      </HBox.margin>
-                  </Button>
                     </children>
                 </HBox>
             </children>

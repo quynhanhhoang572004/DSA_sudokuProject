@@ -1,0 +1,5 @@
+.border{
+    -fx-border-color:  #ff007f;
+    -fx-border-radius: 10px;
+    -fx-border-style:groove ;
+}
