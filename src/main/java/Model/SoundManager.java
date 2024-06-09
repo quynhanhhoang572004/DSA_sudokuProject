@@ -55,6 +55,23 @@ public class SoundManager {
 
             soundMap.put("hard", clip5);
 
+            File soundFile6 = new File(classLoader.getResource("Sound/waves-gentle-med-cu-lake-water-ttp-24-96-180618-23154.wav").getFile());
+            AudioInputStream audioInputStream6 = AudioSystem.getAudioInputStream(soundFile6);
+            Clip clip6 = AudioSystem.getClip();
+            clip6.open(audioInputStream6);
+
+            soundMap.put("expert", clip6);
+
+            File soundFile7 = new File(classLoader.getResource("Sound/waves-hitting-the-rocks-16680.wav").getFile());
+            AudioInputStream audioInputStream7 = AudioSystem.getAudioInputStream(soundFile7);
+            Clip clip7 = AudioSystem.getClip();
+            clip7.open(audioInputStream7);
+
+            soundMap.put("evil", clip7);
+
+
+
+
 
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();

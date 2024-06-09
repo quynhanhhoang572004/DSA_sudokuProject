@@ -396,6 +396,7 @@ public class SudokuController implements Initializable {
                         }
                     }
                 }else if(levelController.level.equals("Expert")) {
+                 soundManager.playSound("expert");
                     if(random1.nextInt(6)<=3) {
                         i[a][b] = 0; counter++;
                         if(counter>70){
@@ -404,6 +405,7 @@ public class SudokuController implements Initializable {
                         }
                     }
                 }else if(levelController.level.equals("Evil")) {
+                 soundManager.playSound("evil");
                     if(random1.nextInt(7)<=4) {
                         i[a][b] = 0; counter++;
                         if(counter>70){
@@ -466,7 +468,14 @@ public class SudokuController implements Initializable {
             soundManager.stopSound("hard");
             loadNewGame(actionEvent);
         }
-
+        else if(levelController.level.equals("Expert")) {
+            soundManager.stopSound("expert");
+            loadNewGame(actionEvent);
+        }
+        else if(levelController.level.equals("Evil")) {
+            soundManager.stopSound("evil");
+            loadNewGame(actionEvent);
+        }
     }
     private void loadNewGame(ActionEvent actionEvent) throws IOException {
         Parent parent =
@@ -518,14 +527,37 @@ public class SudokuController implements Initializable {
             soundManager.playnormalSound("win");
             message2(actionEvent);
         }
+            else if(levelController.level.equals("Expert")) {
+                soundManager.stopSound("expert");
+                soundManager.playnormalSound("win");
+                message2(actionEvent);
+            }
+        else if(levelController.level.equals("Evil")) {
+            soundManager.stopSound("evil");
+            soundManager.playnormalSound("win");
+            message2(actionEvent);
+        }
+
 
         } else {
             if(levelController.level.equals("Hard")){
             soundManager.stopSound("hard");
             soundManager.playnormalSound("lose");
             message(actionEvent);}
+            else if(levelController.level.equals("Expert")){
+                soundManager.stopSound("expert");
+                soundManager.playnormalSound("lose");
+                message(actionEvent);}
+            else if(levelController.level.equals("Evil")){
+                soundManager.stopSound("ecil");
+                soundManager.playnormalSound("lose");
+                message(actionEvent);}
         }
-    }
+        }
+
+
+
+
 
 
     @FXML
