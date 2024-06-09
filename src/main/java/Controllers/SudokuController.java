@@ -121,7 +121,6 @@ public class SudokuController implements Initializable {
         model.initializeGrids();
         model.setCounter(0);
         model.setMessageResult(null);
-        soundManager.playSound("sound1");
         setValue();
 
     }

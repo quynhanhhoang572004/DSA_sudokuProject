@@ -78,7 +78,6 @@ public class Sudoku6x6Controller implements Initializable {
         model.initializeGrids();
         model.setCounter(0);
         model.setMessageResult(null);
-        soundManager.playSound("sound1");
         setValue();
 
     }
@@ -229,6 +228,7 @@ public class Sudoku6x6Controller implements Initializable {
                     ans[a][b] = i[a][b];
 
                 if(levelController.level.equals("Easy")) {
+                    soundManager.playSound("easy");
                     if(random1.nextInt(3)<1) {
                         i[a][b] = 0; counter++;
                         if(counter>24){
@@ -237,6 +237,7 @@ public class Sudoku6x6Controller implements Initializable {
                         }
                     }
                 }else if(levelController.level.equals("Medium")) {
+                    soundManager.playSound("medium");
                     if(random1.nextInt(3)<=1) {
                         i[a][b] = 0; counter++;
                         if(counter>24){
@@ -345,16 +346,30 @@ public class Sudoku6x6Controller implements Initializable {
 
         if (joy == 36) {
 
-            soundManager.stopSound("sound1");
+            if(levelController.level.equals("Easy")){
+
+            soundManager.stopSound("easy");
             soundManager.playnormalSound("win");
-            message2(actionEvent);
+            message2(actionEvent);}
+            if(levelController.level.equals("Medium")){
+
+                soundManager.stopSound("medium");
+                soundManager.playnormalSound("win");
+                message2(actionEvent);}
+
+
 
         } else {
-
-            soundManager.stopSound("sound1");
+            if(levelController.level.equals("Easy")){
+            soundManager.stopSound("easy");
             soundManager.playnormalSound("lose");
-            message(actionEvent);
-        }
+            message(actionEvent);}
+
+        if(levelController.level.equals("Medium")){
+            soundManager.stopSound("medium");
+            soundManager.playnormalSound("lose");
+            message(actionEvent);}
+    }
     }
 
     @FXML
@@ -363,13 +378,24 @@ public class Sudoku6x6Controller implements Initializable {
     }
     @FXML
     void btn_offVolume(ActionEvent event) {
-        soundManager.stopSound("sound1");
+        if(levelController.level.equals("Easy")){
 
+        soundManager.stopSound("easy");}
+
+        else if(levelController.level.equals("Medium")){
+
+            soundManager.stopSound("medium");}
     }
 
     @FXML
     void btn_onVolume(ActionEvent event) {
-        soundManager.playSound("sound1");
+        if(levelController.level.equals("Easy")){
+        soundManager.playSound("easy");
+        }
+        else if(levelController.level.equals("Medium")){
+            soundManager.playSound("medium");
+        }
+
 
     }
 

@@ -19,12 +19,12 @@ public class SoundManager {
 
         try {
             ClassLoader classLoader = this.getClass().getClassLoader();
-            File soundFile = new File(classLoader.getResource("Sound/trap-pianos-200371.wav").getFile());
+            File soundFile = new File(classLoader.getResource("Sound/lofi-synth-pattern-29946.wav").getFile());
             AudioInputStream audioInputStream1 = AudioSystem.getAudioInputStream(soundFile);
             Clip clip1 = AudioSystem.getClip();
             clip1.open(audioInputStream1);
 
-            soundMap.put("sound1", clip1);
+            soundMap.put("easy", clip1);
 
 
             File soundFile2 = new File(classLoader.getResource("Sound/game-over-31-179699.wav").getFile());
@@ -40,6 +40,19 @@ public class SoundManager {
             clip3.open(audioInputStream3);
 
             soundMap.put("win", clip3);
+
+            File soundFile4 = new File(classLoader.getResource("Sound/trap-pianos-200371.wav").getFile());
+            AudioInputStream audioInputStream4 = AudioSystem.getAudioInputStream(soundFile4);
+            Clip clip4 = AudioSystem.getClip();
+            clip4.open(audioInputStream4);
+
+            soundMap.put("medium", clip4);
+
+            
+
+
+
+
 
 
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
