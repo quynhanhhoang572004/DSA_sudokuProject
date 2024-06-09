@@ -301,6 +301,16 @@ public class Sudoku6x6Controller implements Initializable {
 
 
     public void newGame(ActionEvent actionEvent) throws IOException {
+        if(levelController.level.equals("Easy")){
+
+            soundManager.stopSound("easy");
+            loadNewGame(actionEvent);}
+        else if (levelController.level.equals("Medium")){
+            soundManager.stopSound("medium");
+            loadNewGame(actionEvent);
+        }
+    }
+    public void loadNewGame(ActionEvent actionEvent) throws IOException {
         Parent parent =
                 FXMLLoader.load(getClass().getResource("/static/level.fxml"));
         Scene scene = new Scene(parent);
@@ -379,11 +389,9 @@ public class Sudoku6x6Controller implements Initializable {
     @FXML
     void btn_offVolume(ActionEvent event) {
         if(levelController.level.equals("Easy")){
-
         soundManager.stopSound("easy");}
 
         else if(levelController.level.equals("Medium")){
-
             soundManager.stopSound("medium");}
     }
 

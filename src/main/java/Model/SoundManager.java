@@ -48,11 +48,12 @@ public class SoundManager {
 
             soundMap.put("medium", clip4);
 
-            
+            File soundFile5 = new File(classLoader.getResource("Sound/trap-pianos-200371.wav").getFile());
+            AudioInputStream audioInputStream5 = AudioSystem.getAudioInputStream(soundFile5);
+            Clip clip5 = AudioSystem.getClip();
+            clip5.open(audioInputStream5);
 
-
-
-
+            soundMap.put("hard", clip5);
 
 
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {

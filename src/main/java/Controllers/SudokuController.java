@@ -388,6 +388,7 @@ public class SudokuController implements Initializable {
 
              if(levelController.level.equals("Hard")) {
                     if(random1.nextInt(5)<=2) {
+                        soundManager.playSound("hard");
                         i[a][b] = 0; counter++;
                         if(counter>54){
                             port1 = true;
@@ -461,6 +462,13 @@ public class SudokuController implements Initializable {
 
 
     public void newGame(ActionEvent actionEvent) throws IOException {
+        if(levelController.level.equals("Hard")) {
+            soundManager.stopSound("hard");
+            loadNewGame(actionEvent);
+        }
+
+    }
+    private void loadNewGame(ActionEvent actionEvent) throws IOException {
         Parent parent =
                 FXMLLoader.load(getClass().getResource("/static/level.fxml"));
         Scene scene = new Scene(parent);
@@ -468,6 +476,7 @@ public class SudokuController implements Initializable {
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+
     }
 
     private void message(ActionEvent actionEvent) throws IOException {
@@ -478,6 +487,16 @@ public class SudokuController implements Initializable {
                 (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+    private void message2(ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource("/static/WinGame.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage =
+                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     public void btn_result(ActionEvent actionEvent) throws IOException {
@@ -494,31 +513,33 @@ public class SudokuController implements Initializable {
         }
 
         if (joy == 81) {
-            soundManager.stopSound("sound1");
+        if(levelController.level.equals("Hard")) {
+            soundManager.stopSound("hard");
             soundManager.playnormalSound("win");
-            message(actionEvent);
+            message2(actionEvent);
+        }
 
         } else {
-
-            soundManager.stopSound("sound1");
+            if(levelController.level.equals("Hard")){
+            soundManager.stopSound("hard");
             soundManager.playnormalSound("lose");
-            message(actionEvent);
+            message(actionEvent);}
         }
     }
 
-    @FXML
-    void loadGame(ActionEvent event) {
 
-    }
     @FXML
     void btn_offVolume(ActionEvent event) {
-        soundManager.stopSound("sound1");
+        if(levelController.level.equals("Hard")) {
+            soundManager.stopSound("hard");
+        }
 
     }
 
     @FXML
     void btn_onVolume(ActionEvent event) {
-        soundManager.playSound("sound1");
+        if(levelController.level.equals("Hard")) {
+        soundManager.playSound("hard");}
 
     }
 
