@@ -318,6 +318,16 @@ public class Sudoku6x6Controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    private void message2(ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource("/static/WinGame.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage =
+                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
     public void btn_result(ActionEvent actionEvent) throws IOException {
 
@@ -337,7 +347,7 @@ public class Sudoku6x6Controller implements Initializable {
 
             soundManager.stopSound("sound1");
             soundManager.playnormalSound("win");
-            message(actionEvent);
+            message2(actionEvent);
 
         } else {
 
