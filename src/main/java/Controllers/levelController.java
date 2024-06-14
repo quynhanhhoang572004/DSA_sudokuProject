@@ -1,5 +1,6 @@
 package Controllers;
 
+import Model.SoundManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import java.util.ResourceBundle;
 
 public class levelController implements Initializable {
     public static String level;
+    private SoundManager soundManager;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         level = null;
@@ -26,34 +28,7 @@ public class levelController implements Initializable {
                 FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(parent);
         navigationManager.navigateTo(scene);
-//        Stage stage =
-//                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-//        stage.setScene(scene);
-//        stage.show();
     }
-
-
-
-
-//    private void getSource(ActionEvent actionEvent) throws IOException {
-//        Parent parent =
-//                FXMLLoader.load(getClass().getResource("/static/sudoku.fxml"));
-//        Scene scene = new Scene(parent);
-//        Stage stage =
-//                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-//    private void getSource2(ActionEvent actionEvent) throws IOException {
-//        Parent parent =
-//                FXMLLoader.load(getClass().getResource("/static/6x6_soduku.fxml"));
-//        Scene scene = new Scene(parent);
-//        Stage stage =
-//                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-
     public void btn_easy(ActionEvent actionEvent) throws IOException {
         level = "Easy";
       navigation("/static/6x6_soduku.fxml",actionEvent);
@@ -66,7 +41,7 @@ public class levelController implements Initializable {
 
     public void btn_hard(ActionEvent actionEvent) throws IOException {
         level = "Hard";
-        navigation("/static/6x6_soduku.fxml",actionEvent);
+        navigation("/static/sudoku.fxml",actionEvent);
     }
 
     public void btn_expert(ActionEvent actionEvent) throws IOException {

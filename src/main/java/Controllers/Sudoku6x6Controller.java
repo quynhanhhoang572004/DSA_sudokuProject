@@ -398,13 +398,30 @@ public class Sudoku6x6Controller implements Initializable {
 
     @FXML
     void btn_back(ActionEvent event) {
-        navigationManager.goBack();
+        if(levelController.level.equals("Easy")){
+            soundManager.stopSound("easy");
+            navigationManager.goBack();
+        }
+        else if(levelController.level.equals("Medium")){
+            soundManager.stopSound("medium");
+            navigationManager.goBack();
+        }
+
+
 
     }
 
     @FXML
     void btn_forward(ActionEvent event) {
-        navigationManager.goForwrad();
+        if(levelController.level.equals("Easy")){
+            soundManager.stopSound("easy");
+            navigationManager.goForwrad();
+        }
+        else if(levelController.level.equals("Medium")){
+            soundManager.stopSound("medium");
+            navigationManager.goForwrad();
+        }
+
 
     }
 
