@@ -544,34 +544,26 @@ public class SudokuController implements Initializable {
             loadNewGame(actionEvent);
         }
     }
-    private void loadNewGame(ActionEvent actionEvent) throws IOException {
+    public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
         Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/level.fxml"));
+                FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+//        navigationManager.navigateTo(scene);
+//        Stage stage =
+//                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+//        stage.setScene(scene);
+//        stage.show();
+    }
+    private void loadNewGame(ActionEvent actionEvent) throws IOException {
+        navigation("/static/level.fxml",actionEvent);
 
     }
 
     private void message(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/GameOver.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        navigation("/static/GameOver.fxml",actionEvent);
     }
     private void message2(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/WinGame.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        navigation("/static/WinGame.fxml",actionEvent);
 
     }
 
@@ -640,6 +632,17 @@ public class SudokuController implements Initializable {
         if(levelController.level.equals("Hard")) {
         soundManager.playSound("hard");}
 
+    }
+
+    @FXML
+    void btn_back(ActionEvent event) {
+        navigationManager.goBack();
+
+    }
+
+    @FXML
+    void btn_forward(ActionEvent event) {
+        navigationManager.goForwrad();
     }
 
 }

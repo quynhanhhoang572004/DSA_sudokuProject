@@ -298,6 +298,13 @@ public class Sudoku6x6Controller implements Initializable {
             tf_5_5.setText(model.checkZero(i[5][5]));
 
         }
+    public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource(fxml));
+        Scene scene = new Scene(parent);
+        navigationManager.navigateTo(scene);
+
+    }
 
 
     public void newGame(ActionEvent actionEvent) throws IOException {
@@ -311,32 +318,14 @@ public class Sudoku6x6Controller implements Initializable {
         }
     }
     public void loadNewGame(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/level.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+      navigation("/static/level.fxml",actionEvent);
     }
 
     private void message(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/GameOver.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+  navigation("/static/GameOver.fxml",actionEvent);
     }
     private void message2(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/WinGame.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+      navigation("/static/WinGame.fxml",actionEvent);
 
     }
 
@@ -404,6 +393,18 @@ public class Sudoku6x6Controller implements Initializable {
             soundManager.playSound("medium");
         }
 
+
+    }
+
+    @FXML
+    void btn_back(ActionEvent event) {
+        navigationManager.goBack();
+
+    }
+
+    @FXML
+    void btn_forward(ActionEvent event) {
+        navigationManager.goForwrad();
 
     }
 
