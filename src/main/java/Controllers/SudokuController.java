@@ -411,6 +411,7 @@ public class SudokuController implements Initializable {
                 ans[a][b] = i[a][b];
 
              if(levelController.level.equals("Hard")) {
+                 soundManager.playSound("hard");
                  if(random1.nextInt(5)<=2) {
                      i[a][b] = 0; counter++;
                      if(counter>54){
@@ -530,6 +531,18 @@ public class SudokuController implements Initializable {
     }
 
 
+
+    public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource(fxml));
+        Scene scene = new Scene(parent);
+        navigationManager.navigateTo(scene);
+
+    }
+    private void loadNewGame(ActionEvent actionEvent) throws IOException {
+        navigation("/static/level.fxml",actionEvent);
+
+    }
     public void newGame(ActionEvent actionEvent) throws IOException {
         if(levelController.level.equals("Hard")) {
             soundManager.stopSound("hard");
@@ -543,20 +556,6 @@ public class SudokuController implements Initializable {
             soundManager.stopSound("evil");
             loadNewGame(actionEvent);
         }
-    }
-    public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource(fxml));
-        Scene scene = new Scene(parent);
-//        navigationManager.navigateTo(scene);
-//        Stage stage =
-//                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-//        stage.setScene(scene);
-//        stage.show();
-    }
-    private void loadNewGame(ActionEvent actionEvent) throws IOException {
-        navigation("/static/level.fxml",actionEvent);
-
     }
 
     private void message(ActionEvent actionEvent) throws IOException {
@@ -636,13 +635,37 @@ public class SudokuController implements Initializable {
 
     @FXML
     void btn_back(ActionEvent event) {
-        navigationManager.goBack();
+        if(levelController.level.equals("Hard")){
+            soundManager.stopSound("hard");
+            navigationManager.goBack();
+        }
+        else if(levelController.level.equals("Expert")){
+            soundManager.stopSound("expert");
+            navigationManager.goBack();
+        }
+        else if(levelController.level.equals("Evil")){
+            soundManager.stopSound("evil");
+            navigationManager.goBack();
+        }
+
+
 
     }
 
     @FXML
     void btn_forward(ActionEvent event) {
-        navigationManager.goForwrad();
+        if(levelController.level.equals("Hard")){
+            soundManager.stopSound("hard");
+            navigationManager.goForwrad();
+        }
+        else if(levelController.level.equals("Expert")){
+            soundManager.stopSound("expert");
+            navigationManager.goForwrad();
+        }
+        else if(levelController.level.equals("Evil")){
+            soundManager.stopSound("evil");
+            navigationManager.goForwrad();
+        }
     }
 
 }
