@@ -33,8 +33,7 @@ public class GameOverController {
 
         @FXML
         void btn_try_again(ActionEvent actionEvent) throws IOException {
-          navigation("/static/level.fxml",actionEvent);
-
+            navigationManager.goBack();
         }
 
     @FXML
