@@ -1,6 +1,6 @@
 # PROJECT OF DATA STRUCTURE AND ALGORITHM COURSE
 # Project Name
-SUDOKU (GIRLS EDITION)
+ **SUDOKU (GIRLS EDITION)**
 
 # Description
 This game, called Soduku (female edition), includes five levels: easy, medium, hard, expert, and evil.
