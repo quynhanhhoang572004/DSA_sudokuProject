@@ -231,16 +231,16 @@ public class Sudoku6x6Controller implements Initializable {
                     soundManager.playSound("easy");
                     if(random1.nextInt(3)<1) {
                         i[a][b] = 0; counter++;
-                        if(counter>24){
+                        if(counter>36){
                             port1 = true;
                             break;
                         }
                     }
                 }else if(levelController.level.equals("Medium")) {
                     soundManager.playSound("medium");
-                    if(random1.nextInt(3)<=1) {
+                    if(random1.nextInt(5)<=1) {
                         i[a][b] = 0; counter++;
-                        if(counter>24){
+                        if(counter>36){
                             port1 = true;
                             break;
                         }
