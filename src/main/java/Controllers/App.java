@@ -1,4 +1,7 @@
 package Controllers;
+/* Name: Hoang Ngoc Quynh Anh
+ Purpose:.
+*/
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/static/MainPage.fxml"));
@@ -15,6 +19,7 @@ public class App extends Application {
         stage.setTitle("Soduku Girls edition");
         stage.setResizable(true);
         stage.setScene(scene);
+        navigationManager.initialize(stage);
         stage.show();
     }
 

@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -17,8 +19,31 @@
                </font>
             </Label>
                   <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0" />
-                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0" />
-                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0" />
+                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="220.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#btn_back" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="32.0">
+                                 <image>
+                                    <Image url="@../Images/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="62.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_forward" prefHeight="34.0" prefWidth="33.0" style="-fx-background-color: transparent;">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="38.0">
+                                 <image>
+                                    <Image url="@../Images/forward.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children></HBox>
                     <Button layoutX="207.0" layoutY="345.0" mnemonicParsing="false" onAction="#btn_expert" prefHeight="42.0" prefWidth="190.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: white; -fx-border-color: transparent; -fx-background-radius: 30px;" text="Expert">
                         <font>
                             <Font name="System Bold Italic" size="19.0" />
