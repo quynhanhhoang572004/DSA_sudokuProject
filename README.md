@@ -15,7 +15,8 @@ International University - HCMIU.
 Quarter 6, Linh Trung Ward, Thu Duc City, Ho Chi Minh City, Vietnam.
 
 # Major
-Computer Science
+Computer Science 
+
 School of Computer Science and Engineering.
 
 # Language and Library 
