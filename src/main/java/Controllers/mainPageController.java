@@ -7,14 +7,13 @@ package Controllers;
  On the other hand, level hard, expert, evil is a 9x9 sodoku game designed for players who want to push their mental
  limits and find it somewhat more difficult to complete the puzzles. Players must fill each row and column from 1 to 9.
 */
+import Model.navigationManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 

@@ -7,6 +7,7 @@
  limits and find it somewhat more difficult to complete the puzzles. Players must fill each row and column from 1 to 9.
 */
 package Controllers;
+import Model.navigationManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
