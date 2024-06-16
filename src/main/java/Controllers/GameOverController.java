@@ -17,11 +17,15 @@ import javafx.scene.Scene;
 import java.io.IOException;
 
 public class GameOverController {
+    public navigationManager NavigationManager;
+    public GameOverController(){
+        this.NavigationManager = navigationManager.getInstance();
+    }
     public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
         Parent parent =
                 FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(parent);
-        navigationManager.navigateTo(scene);
+        NavigationManager.navigateTo(scene);
     }
 
         @FXML

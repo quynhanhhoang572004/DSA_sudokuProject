@@ -27,6 +27,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Sudoku6x6Controller implements Initializable {
+    private navigationManager NavigationManager;
 
 
     public TextField tf_3_1;
@@ -81,7 +82,7 @@ public class Sudoku6x6Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        this.NavigationManager = navigationManager.getInstance();
         model.initializeGrids();
         model.setCounter(0);
         model.setMessageResult(null);
@@ -150,12 +151,15 @@ public class Sudoku6x6Controller implements Initializable {
                     int sp = j1[nn];
                     j1[nn] = j1[p1-1];
                     j1[p1-1] = sp;
-                    p1--;}
+                    p1--;
+                        System.out.println("Shuffled1 i[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1);
+                       }
 
                 }
             }
 
             //  part-2
+
             for(int a=0; a<=2; a++){
                 int d = 0;
                 for(int b=3; b<=5; b++){
@@ -165,7 +169,9 @@ public class Sudoku6x6Controller implements Initializable {
                     }else {
                         i[a][b] = i[a + 1][d];
                         d++;
+                        System.out.println("Shuffled i2[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1);
                     }
+
                 }
             }
 
@@ -180,11 +186,13 @@ public class Sudoku6x6Controller implements Initializable {
                         i[c][s] = i[b][d];
                         c++;
                     }
-                }d++;
+
+                    System.out.println("Shuffled i3[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1); }d++;
                 s++;
             }
 
             //  part-5
+
             for(int a=3, d = 4, s=3; a<=5; a++){
                 int c = 3;
                 for(int b=0; b<=2; b++){
@@ -196,8 +204,10 @@ public class Sudoku6x6Controller implements Initializable {
                         i[c][s] = i[b][d];
                         c++;
                     }
-                }d++;
+
+                    System.out.println("Shuffled i4[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1);}d++;
                 s++;
+
             }
 
             int sd3 = 1, sd4 = 2;
@@ -229,10 +239,12 @@ public class Sudoku6x6Controller implements Initializable {
             }
 
             Random random1 = new Random();
+
             boolean port1 = false;
             for(int a=0; a<6; a++){
                 for(int b=0; b<6; b++){
                     ans[a][b] = i[a][b];
+
 
                 if(levelController.level.equals("Easy")) {
                     soundManager.playSound("easy");
@@ -309,7 +321,7 @@ public class Sudoku6x6Controller implements Initializable {
         Parent parent =
                 FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(parent);
-        navigationManager.navigateTo(scene);
+        NavigationManager.navigateTo(scene);
 
     }
 

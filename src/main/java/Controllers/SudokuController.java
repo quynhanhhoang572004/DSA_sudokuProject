@@ -239,6 +239,7 @@ public class SudokuController implements Initializable {
                 j1[nn] = j1[p1-1];
                 j1[p1-1] = sp;
                 p1--;
+
             }
         }
 

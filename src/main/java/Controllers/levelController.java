@@ -23,7 +23,11 @@ import java.util.ResourceBundle;
 
 public class levelController implements Initializable {
     public static String level;
-    private SoundManager soundManager;
+    private navigationManager NavigationManager;
+    public levelController(){
+        this.NavigationManager= navigationManager.getInstance();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         level = null;
@@ -33,7 +37,7 @@ public class levelController implements Initializable {
         Parent parent =
                 FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = new Scene(parent);
-        navigationManager.navigateTo(scene);
+        NavigationManager.navigateTo(scene);
     }
     public void btn_easy(ActionEvent actionEvent) throws IOException {
         level = "Easy";

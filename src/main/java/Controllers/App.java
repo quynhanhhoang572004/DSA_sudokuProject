@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
+    public navigationManager NavigationManager;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,7 +25,8 @@ public class App extends Application {
         stage.setTitle("Soduku (Girls edition)");
         stage.setResizable(true);
         stage.setScene(scene);
-        navigationManager.initialize(stage);
+        this.NavigationManager = navigationManager.getInstance();
+        NavigationManager.initialize(stage);
         stage.show();
     }
 

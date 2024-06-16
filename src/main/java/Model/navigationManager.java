@@ -17,6 +17,17 @@ public class navigationManager {
     private static final Stack<Scene> forwardStack = new Stack<>();
     private static final Stack<Scene> backStack = new Stack<>();
     private static Stage primaryStage;
+    private static navigationManager instance;
+    private  navigationManager(){
+        
+
+    }
+    public static navigationManager getInstance() {
+        if (instance == null) {
+            instance = new navigationManager();
+        }
+        return instance;
+    }
 
     public static void initialize(Stage stage) {
         primaryStage = stage;

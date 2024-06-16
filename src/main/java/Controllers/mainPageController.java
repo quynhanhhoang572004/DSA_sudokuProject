@@ -21,12 +21,16 @@ public class mainPageController {
 
     @FXML
     private Button btn_newGame;
+    private navigationManager NavigationManager;
+    public mainPageController(){
+        this.NavigationManager = navigationManager.getInstance();
+    }
 
 public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
     Parent parent =
             FXMLLoader.load(getClass().getResource(fxml));
     Scene scene = new Scene(parent);
-    navigationManager.navigateTo(scene);
+    NavigationManager.navigateTo(scene);
 
 }
 
