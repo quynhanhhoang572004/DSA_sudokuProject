@@ -631,6 +631,14 @@ public class SudokuController implements Initializable {
         if(levelController.level.equals("Hard")) {
             soundManager.stopSound("hard");
         }
+        else if(levelController.level.equals("Expert")){
+            soundManager.stopSound("expert");
+
+        }
+        else if(levelController.level.equals("Evil")){
+            soundManager.stopSound("evil");
+        }
+
 
     }
 
@@ -639,7 +647,17 @@ public class SudokuController implements Initializable {
         if(levelController.level.equals("Hard")) {
         soundManager.playSound("hard");}
 
+        else if(levelController.level.equals("Expert")){
+            soundManager.playSound("expert");
+
+        }
+        else if(levelController.level.equals("Evil")){
+            soundManager.playSound("evil");
+
+        }
+
     }
+
 
     @FXML
     void btn_back(ActionEvent event) {
