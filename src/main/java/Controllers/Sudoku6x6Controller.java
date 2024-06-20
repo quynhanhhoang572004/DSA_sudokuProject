@@ -1,18 +1,25 @@
+/* Name: Hoang Ngoc Quynh Anh
+ Purpose: This game, called Soduku (female edition), includes five levels: easy, medium, hard, expert, and evil.
+ The 6x6 sodoku game's easy and medium levels require players to fill in each row and column from 1 to 6.
+ This level is intended for novices and features a smaller grid that is simpler to understand and solve.
+ If you're new to Sudoku or just want a short and entertaining challenge, this is ideal for you.
+ On the other hand, level hard, expert, evil is a 9x9 sodoku game designed for players who want to push their mental
+ limits and find it somewhat more difficult to complete the puzzles. Players must fill each row and column from 1 to 9.
+*/
 package Controllers;
 
 
 
 import Model.SoundManager;
 import Model.SudokuModel;
+import Model.navigationManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +27,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Sudoku6x6Controller implements Initializable {
+    private navigationManager NavigationManager;
 
 
     public TextField tf_3_1;
@@ -74,7 +82,7 @@ public class Sudoku6x6Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        this.NavigationManager = navigationManager.getInstance();
         model.initializeGrids();
         model.setCounter(0);
         model.setMessageResult(null);
@@ -143,12 +151,15 @@ public class Sudoku6x6Controller implements Initializable {
                     int sp = j1[nn];
                     j1[nn] = j1[p1-1];
                     j1[p1-1] = sp;
-                    p1--;}
+                    p1--;
+                        System.out.println("Shuffled1 i[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1);
+                       }
 
                 }
             }
 
             //  part-2
+
             for(int a=0; a<=2; a++){
                 int d = 0;
                 for(int b=3; b<=5; b++){
@@ -158,7 +169,9 @@ public class Sudoku6x6Controller implements Initializable {
                     }else {
                         i[a][b] = i[a + 1][d];
                         d++;
+                        System.out.println("Shuffled i2[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1);
                     }
+
                 }
             }
 
@@ -173,11 +186,13 @@ public class Sudoku6x6Controller implements Initializable {
                         i[c][s] = i[b][d];
                         c++;
                     }
-                }d++;
+
+                    System.out.println("Shuffled i3[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1); }d++;
                 s++;
             }
 
             //  part-5
+
             for(int a=3, d = 4, s=3; a<=5; a++){
                 int c = 3;
                 for(int b=0; b<=2; b++){
@@ -189,8 +204,10 @@ public class Sudoku6x6Controller implements Initializable {
                         i[c][s] = i[b][d];
                         c++;
                     }
-                }d++;
+
+                    System.out.println("Shuffled i4[" + a + "][" + b + "] = " + i[a][b] + ", p1 = " + p1);}d++;
                 s++;
+
             }
 
             int sd3 = 1, sd4 = 2;
@@ -222,25 +239,27 @@ public class Sudoku6x6Controller implements Initializable {
             }
 
             Random random1 = new Random();
+
             boolean port1 = false;
             for(int a=0; a<6; a++){
                 for(int b=0; b<6; b++){
                     ans[a][b] = i[a][b];
 
+
                 if(levelController.level.equals("Easy")) {
                     soundManager.playSound("easy");
                     if(random1.nextInt(3)<1) {
                         i[a][b] = 0; counter++;
-                        if(counter>24){
+                        if(counter>36){
                             port1 = true;
                             break;
                         }
                     }
                 }else if(levelController.level.equals("Medium")) {
                     soundManager.playSound("medium");
-                    if(random1.nextInt(3)<=1) {
+                    if(random1.nextInt(5)<=1) {
                         i[a][b] = 0; counter++;
-                        if(counter>24){
+                        if(counter>36){
                             port1 = true;
                             break;
                         }
@@ -298,6 +317,13 @@ public class Sudoku6x6Controller implements Initializable {
             tf_5_5.setText(model.checkZero(i[5][5]));
 
         }
+    public void navigation(String fxml, ActionEvent actionEvent) throws IOException {
+        Parent parent =
+                FXMLLoader.load(getClass().getResource(fxml));
+        Scene scene = new Scene(parent);
+        NavigationManager.navigateTo(scene);
+
+    }
 
 
     public void newGame(ActionEvent actionEvent) throws IOException {
@@ -311,32 +337,14 @@ public class Sudoku6x6Controller implements Initializable {
         }
     }
     public void loadNewGame(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/level.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+      navigation("/static/level.fxml",actionEvent);
     }
 
     private void message(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/GameOver.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+  navigation("/static/GameOver.fxml",actionEvent);
     }
     private void message2(ActionEvent actionEvent) throws IOException {
-        Parent parent =
-                FXMLLoader.load(getClass().getResource("/static/WinGame.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage =
-                (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+      navigation("/static/WinGame.fxml",actionEvent);
 
     }
 
@@ -402,6 +410,35 @@ public class Sudoku6x6Controller implements Initializable {
         }
         else if(levelController.level.equals("Medium")){
             soundManager.playSound("medium");
+        }
+
+
+    }
+
+    @FXML
+    void btn_back(ActionEvent event) {
+        if(levelController.level.equals("Easy")){
+            soundManager.stopSound("easy");
+            navigationManager.goBack();
+        }
+        else if(levelController.level.equals("Medium")){
+            soundManager.stopSound("medium");
+            navigationManager.goBack();
+        }
+
+
+
+    }
+
+    @FXML
+    void btn_forward(ActionEvent event) {
+        if(levelController.level.equals("Easy")){
+            soundManager.stopSound("easy");
+            navigationManager.goForwrad();
+        }
+        else if(levelController.level.equals("Medium")){
+            soundManager.stopSound("medium");
+            navigationManager.goForwrad();
         }
 
 

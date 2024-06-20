@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,12 +14,12 @@
             <Font name="Baloo Bhaina 2 Bold" size="72.0" />
          </font>
       </Label>
-          <Button layoutX="132.0" layoutY="334.0" mnemonicParsing="false" onAction="#btn_try_again" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: RED;" text="Play again">
+          <Button layoutX="176.0" layoutY="291.0" mnemonicParsing="false" onAction="#btn_try_again" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: RED;" text="Play again">
               <font>
                   <Font name="System Bold Italic" size="14.0" />
               </font>
           </Button>
-      <Label layoutX="24.0" layoutY="14.0" prefWidth="192.0" style="-fx-text-fill: #f765a3;" text="SODUKU GAME (Girls edition)" textFill="WHITE">
+      <Label layoutX="398.0" layoutY="14.0" prefWidth="192.0" style="-fx-text-fill: #f765a3;" text="SUDOKU GAME (Girls edition)" textFill="WHITE">
          <font>
             <Font name="Baloo Bhaina 2 Bold" size="14.0" />
          </font>
@@ -27,10 +29,32 @@
             <Font name="Baloo Bhaina 2 Regular" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="336.0" layoutY="334.0" mnemonicParsing="false" onAction="#btn_newGame" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: #447ac4;" text="New Game">
+      <Button layoutX="176.0" layoutY="346.0" mnemonicParsing="false" onAction="#btn_newGame" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #F4C2D7; -fx-text-fill: #447ac4;" text="New Game">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
+      <AnchorPane layoutX="1.0" layoutY="8.0" prefHeight="34.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#btn_back" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="32.0">
+                     <image>
+                        <Image url="@../Images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="62.0" layoutY="3.0" mnemonicParsing="false" onAction="#btn_forward" prefHeight="34.0" prefWidth="33.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0">
+                     <image>
+                        <Image url="@../Images/forward.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
