@@ -22,6 +22,19 @@ School of Computer Science and Engineering.
 # Language and Library 
 Mostly java and javafx
 
+# How to run this code
+### Required software
+* Java Development Kit (i.e. OpenJDK) [CLICK TO DOWNLOAD](https://openjdk.org/)
+* Any Java IDE (i.e. JetBrains IntelliJ IDEA) [CLICK TO DOWNLOAD](https://www.jetbrains.com/idea/download/)
+* JavaFx library [CLICK TO DOWNLOAD](https://openjfx.io/)
+ 1. Clone the repo
+   ```sh
+   git clone https://github.com/quynhanhhoang572004/DSA_sudokuProject.git
+   ```
+2. Open in a Java IDE
+3. Add javaFx library in Java IDE
+4. Choose **App.java** and click RUN to start the program.
+
 # Class Lecturer
 Chi Thanh Vi    PhD of Computer Science - vcthanh@hcmiu.edu.vn
 
