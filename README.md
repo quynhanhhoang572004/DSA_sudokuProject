@@ -35,6 +35,9 @@ Mostly java and javafx
 3. Add javaFx library in Java IDE
 4. Choose **App.java** and click RUN to start the program.
 
+# Report file
+[Sudoku game project's report](ITCSIU22256_HoangNgocQuynhAnh_ProjectReport.pdf)
+
 # Class Lecturer
 Chi Thanh Vi    PhD of Computer Science - vcthanh@hcmiu.edu.vn
 
