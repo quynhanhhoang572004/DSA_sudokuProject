@@ -26,6 +26,7 @@ public class SoundManager {
     private void loadSounds() {
 
         try {
+
             ClassLoader classLoader = this.getClass().getClassLoader();
             File soundFile = new File(classLoader.getResource("Sound/lofi-synth-pattern-29946.wav").getFile());
             AudioInputStream audioInputStream1 = AudioSystem.getAudioInputStream(soundFile);
