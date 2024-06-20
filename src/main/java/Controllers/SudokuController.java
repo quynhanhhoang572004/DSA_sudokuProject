@@ -217,14 +217,7 @@ public class SudokuController implements Initializable {
         i[8][6] = model.emptyChecker(tf_8_6.getText());
         i[8][7] = model.emptyChecker(tf_8_7.getText());
         i[8][8] = model.emptyChecker(tf_8_8.getText());
-
-
-       
     }
-  
-
-
-
     private void setValue(){
         Random random = new Random();
 
@@ -367,7 +360,7 @@ public class SudokuController implements Initializable {
             s++;
         }
 
-        // 1st ssd
+
         int sd3 = 1, sd4 = 2;
         for(int a=0; a<=8; a++){
             int sp = i[sd3][a];
@@ -631,6 +624,14 @@ public class SudokuController implements Initializable {
         if(levelController.level.equals("Hard")) {
             soundManager.stopSound("hard");
         }
+        else if(levelController.level.equals("Expert")){
+            soundManager.stopSound("expert");
+
+        }
+        else if(levelController.level.equals("Evil")){
+            soundManager.stopSound("evil");
+        }
+
 
     }
 
@@ -639,7 +640,17 @@ public class SudokuController implements Initializable {
         if(levelController.level.equals("Hard")) {
         soundManager.playSound("hard");}
 
+        else if(levelController.level.equals("Expert")){
+            soundManager.playSound("expert");
+
+        }
+        else if(levelController.level.equals("Evil")){
+            soundManager.playSound("evil");
+
+        }
+
     }
+
 
     @FXML
     void btn_back(ActionEvent event) {
