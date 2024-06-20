@@ -3,7 +3,7 @@
  **SUDOKU (GIRLS EDITION)**
 
 # Description
-This game, called Soduku (female edition), includes five levels: easy, medium, hard, expert, and evil.
+This game, called Soduku (girls edition), includes five levels: easy, medium, hard, expert, and evil.
  The 6x6 sodoku game's easy and medium levels require players to fill in each row and column from 1 to 6. 
  This level is intended for novices and features a smaller grid that is simpler to understand and solve.
  If you're new to Sudoku or just want a short and entertaining challenge, this is ideal for you. 
